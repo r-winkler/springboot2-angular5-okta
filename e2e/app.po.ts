@@ -1,8 +1,9 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  navigateTo(path: string) {
-    return browser.get(path);
+
+  navigateTo() {
+    return browser.get('/');
   }
 
   getParagraphText() {
@@ -16,26 +17,5 @@ export class AppPage {
   getCarList() {
     return element.all(by.repeater('car in cars'));
   }
-
-  getAddButtonInEditComponent() {
-    return element(by.id('save'));
-  }
-
-  getCancelButtonInEditComponent() {
-    return element(by.id('cancel'));
-  }
-
-  getDeleteButtonInEditComponent() {
-    return element(by.id('delete'));
-  }
-
-  getInputFieldButtonInEditComponent() {
-    return element(by.id('input'));
-  }
-
-  setInputFieldText(text) {
-    this.getInputFieldButtonInEditComponent().sendKeys(text);
-  }
-
 
 }
