@@ -12,13 +12,14 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     // Only add to localhost requests since Giphy's API fails when the request include a token
-    if (request.url.indexOf('localhost') > -1) {
-      request = request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${this.oktaAuth.getAccessToken().accessToken}`
-        }
-      });
-    }
+   // if (request.url.indexOf('localhost') > -1) {
+      if (request.url.indexOf('https://cool-cars-server.cfapps.io/') > -1) {
+        request = request.clone({
+          setHeaders: {
+            Authorization: `Bearer ${this.oktaAuth.getAccessToken().accessToken}`
+          }
+        });
+      }
 
     return next.handle(request);
   }

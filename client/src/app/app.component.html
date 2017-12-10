@@ -1,15 +1,15 @@
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
   <span class="toolbar-spacer"></span>
-  <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
-          (click)="oktaAuth.logout()">Logout
+  <button mat-raised-button color="accent" *ngIf="oktaAuth2.isAuthenticated()"
+          (click)="oktaAuth2.logout()">Logout
   </button>
 </mat-toolbar>
 
-<mat-card *ngIf="!oktaAuth.isAuthenticated()">
+<mat-card *ngIf="!oktaAuth2.isAuthenticated()">
   <mat-card-content>
     <button mat-raised-button color="accent"
-            (click)="oktaAuth.loginRedirect()">Login
+            (click)="oktaAuth2.loginRedirect()">Login
     </button>
   </mat-card-content>
 </mat-card>

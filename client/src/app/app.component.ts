@@ -9,6 +9,9 @@ import {Component} from "@angular/core";
 export class AppComponent {
   title = 'cool cars app';
 
-  constructor(private oktaAuth: OktaAuthService) {
+  oktaAuth2: OktaAuthService;
+
+  constructor(oktaAuth2: OktaAuthService) {
+    this.oktaAuth2 = oktaAuth2;
   }
 }

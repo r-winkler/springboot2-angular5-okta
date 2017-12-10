@@ -37,7 +37,8 @@ const appRoutes: Routes = [
 
 const config = {
   issuer: 'https://dev-653553.oktapreview.com/oauth2/default',
-  redirectUri: 'http://localhost:4200/implicit/callback',
+  // redirectUri: 'http://localhost:4200/implicit/callback',
+  redirectUri: 'https://cool-cars-client.cfapps.io/implicit/callback',
   clientId: '0oad6orpwikltfKVT0h7'
 };
 
